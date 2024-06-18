@@ -1,0 +1,12 @@
+name: "release"
+version: "0.1.0"
+usage: "Manage internal release objects for Helm"
+description: |-
+  This plugin provides enables you to work with Helm internal
+  release objects.
+  WARNING: Modifying Helm internal release objects can lead to
+  broken releases. Use with caution.
+command: "$HELM_PLUGIN_DIR/bin/helm-release"
+hooks:
+  install: "cd $HELM_PLUGIN_DIR; make build"
+  update: "cd $HELM_PLUGIN_DIR; make build"
